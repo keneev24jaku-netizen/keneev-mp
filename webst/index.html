@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Keneev.mp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🌍 ЯЗЫК -->
+<div class="lang-switch">
+    <span id="ru" onclick="setLang('ru')">RU</span>
+    <span id="en" onclick="setLang('en')">EN</span>
+    <span id="kr" onclick="setLang('kr')">KR</span>
+</div>
+
+<!-- 🔝 ЛОГО -->
+<div class="corner-logo-wrap">
+    <img src="logo.png" alt="Logo" class="corner-logo">
+</div>
+
+</div>
+
+<div class="overlay">
+    <div class="card">
+
+        <div class="logo-text">KZH</div>
+
+        <h1
+          data-ru="Жаныбек Кенеев"
+          data-en="Zhanybek Keneev"
+          data-kr="자니벡 케네예프">
+        </h1>
+
+        <p
+          data-ru="IT • Auto • Lifestyle"
+          data-en="IT • Auto • Lifestyle"
+          data-kr="IT • 자동차 • 라이프스타일">
+          IT • Auto • Lifestyle
+        </p>
+
+        <a href="#"
+           data-ru="📸 Instagram"
+           data-en="📸 Instagram"
+           data-kr="📸 인스타그램">
+           📸 Instagram
+        </a>
+
+        <a href="#"
+           data-ru="✈️ Telegram"
+           data-en="✈️ Telegram"
+           data-kr="✈️ 텔레그램">
+           ✈️ Telegram
+        </a>
+
+        <a href="#"
+           data-ru="💬 WhatsApp"
+           data-en="💬 WhatsApp"
+           data-kr="💬 왓츠앱">
+           💬 WhatsApp
+        </a>
+
+    </div>
+</div>
+
+<!-- ⚙️ JS ДОЛЖЕН БЫТЬ В КОНЦЕ -->
+<script>
+function setLang(lang) {
+    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+    });
+
+    document.querySelectorAll('.lang-switch span')
+        .forEach(s => s.classList.remove('active'));
+
+    document.getElementById(lang).classList.add('active');
+}
+
+setLang('ru');
+</script>
+
+</body>
+</html>
